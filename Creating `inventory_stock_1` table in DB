@@ -1,0 +1,11 @@
+//in phpmyadmin
+--
+-- Structure for view `mg_inventory_stock_1`
+--
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`dollarwi_mg1`@`localhost` SQL SECURITY INVOKER VIEW `mg_inventory_stock_1`  AS  select distinct `legacy_stock_status`.`product_id` AS `product_id`,`legacy_stock_status`.`website_id` AS `website_id`,`legacy_stock_status`.`stock_id` AS `stock_id`,`legacy_stock_status`.`qty` AS `quantity`,`legacy_stock_status`.`stock_status` AS `is_salable`,`product`.`sku` AS `sku` from (`mg_cataloginventory_stock_status` `legacy_stock_status` join `mg_catalog_product_entity` `product` on(`legacy_stock_status`.`product_id` = `product`.`entity_id`)) ;
+
+--
+-- VIEW `mg_inventory_stock_1`
+-- Data: None
+--
